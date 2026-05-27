@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alomari Tech — Intelligence. Automated. Scalable.</title>
+  <meta name="description" content="Alomari Tech engineers high-performance AI systems that automate complex business operations, drastically reducing costs while unlocking exponential growth." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Lucide Icons via CDN -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Noise Texture Overlay -->
+  <div class="noise-overlay"></div>
+
+  <!-- Scroll Progress Bar -->
+  <div id="scroll-progress"></div>
+
+  <!-- ==================== NAVBAR ==================== -->
+  <nav id="navbar" class="navbar">
+    <div class="container navbar-inner">
+      <div class="navbar-logo" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+        <div class="logo-icon">
+          <i data-lucide="brain" class="icon-white"></i>
+        </div>
+        <span class="logo-text">ALOMARI <span class="text-primary">TECH</span></span>
+      </div>
+
+      <div class="navbar-links" id="desktop-nav">
+        <a href="#services" class="nav-link">Solutions</a>
+        <a href="#process" class="nav-link">Process</a>
+        <a href="#cases" class="nav-link">Case Studies</a>
+        <a href="#team" class="nav-link">Team</a>
+        <a href="#pricing" class="nav-link">Pricing</a>
+        <a href="#contact" class="btn btn-primary btn-rounded">Contact Us</a>
+      </div>
+
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
+        <i data-lucide="menu" id="menu-icon"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Backdrop -->
+  <div class="mobile-backdrop" id="mobile-backdrop"></div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-header">
+      <div class="navbar-logo">
+        <div class="logo-icon logo-icon-sm">
+          <i data-lucide="brain" class="icon-white icon-sm"></i>
+        </div>
+        <span class="logo-text-sm">ALOMARI <span class="text-primary">TECH</span></span>
+      </div>
+      <button class="mobile-close" id="mobile-close">
+        <i data-lucide="x"></i>
+      </button>
+    </div>
+    <div class="mobile-menu-body">
+      <p class="mobile-nav-label">Navigation</p>
+      <div class="mobile-nav-links">
+        <a href="#services" class="mobile-nav-link" data-close-menu>Solutions <i data-lucide="arrow-right"></i></a>
+        <a href="#process" class="mobile-nav-link" data-close-menu>Process <i data-lucide="arrow-right"></i></a>
+        <a href="#cases" class="mobile-nav-link" data-close-menu>Case Studies <i data-lucide="arrow-right"></i></a>
+        <a href="#team" class="mobile-nav-link" data-close-menu>Team <i data-lucide="arrow-right"></i></a>
+        <a href="#pricing" class="mobile-nav-link" data-close-menu>Pricing <i data-lucide="arrow-right"></i></a>
+      </div>
+      <div class="mobile-menu-footer">
+        <div>
+          <p class="mobile-nav-label">Get in touch</p>
+          <a href="mailto:alomaritech@gmail.com" class="mobile-email">alomaritech@gmail.com</a>
+        </div>
+        <div class="mobile-socials">
+          <a href="#" class="social-icon"><i data-lucide="twitter"></i></a>
+          <a href="#" class="social-icon"><i data-lucide="github"></i></a>
+          <a href="#" class="social-icon"><i data-lucide="linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="mobile-menu-cta">
+      <a href="#contact" class="btn btn-primary btn-full" data-close-menu>Start Project</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- ==================== HERO ==================== -->
+    <section id="hero" class="hero-section" data-mouse-spotlight>
+      <div class="neural-bg">
+        <div class="atmosphere"></div>
+        <div class="scanlines"></div>
+        <svg class="grid-svg" aria-hidden="true">
+          <defs>
+            <pattern id="hero-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" stroke-width="0.5"/>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#hero-grid)" />
+        </svg>
+        <div class="particles" id="particles-container"></div>
+      </div>
+
+      <!-- Spotlight Effect -->
+      <div class="spotlight" id="hero-spotlight"></div>
+
+      <!-- Decorative Orbs -->
+      <div class="orb orb-primary hero-orb-left"></div>
+      <div class="orb orb-purple hero-orb-right"></div>
+
+      <!-- Floating Icon -->
+      <div class="hero-float-icon float-anim">
+        <i data-lucide="cpu" class="icon-primary icon-lg"></i>
+      </div>
+
+      <div class="container hero-content">
+        <div class="hero-center reveal-hero">
+          <div class="hero-badge">
+            <i data-lucide="sparkles" class="icon-primary icon-xs"></i>
+            <span>Enterprise Grade Intelligence</span>
+          </div>
+
+          <h1 class="hero-title">
+            <span class="gradient-text-animated">ALOMARI TECH</span>
+          </h1>
+
+          <div class="hero-subtitle-wrap">
+            <p class="hero-subtitle">Intelligence. Automated. Scalable.</p>
+            <div class="underline-anim"></div>
+          </div>
+
+          <p class="hero-desc">
+            We engineer high-performance AI systems that automate complex business operations,
+            drastically reducing costs while unlocking exponential growth.
+          </p>
+
+          <div class="hero-btns">
+            <a href="#services" class="btn btn-primary btn-lg btn-rounded btn-glow magnetic">
+              <span>Explore Solutions</span>
+              <i data-lucide="arrow-right" class="icon-sm"></i>
+            </a>
+            <a href="#contact" class="btn btn-outline btn-lg btn-rounded magnetic">Contact Us</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-indicator">
+        <span class="scroll-text">Scroll to explore</span>
+        <div class="scroll-mouse">
+          <div class="scroll-dot"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CERTIFIED BY ==================== -->
+    <section class="certified-section">
+      <div class="orb orb-primary certified-orb"></div>
+      <div class="container">
+        <p class="section-eyebrow">Certified AI Solutions Partner</p>
+        <div class="logos-row">
+          <div class="logo-card float-anim" style="animation-delay:0s">
+            <img src="https://www.vectorlogo.zone/logos/google_cloud/google_cloud-ar21.svg" alt="Google Cloud" class="partner-logo partner-logo-wide" referrerpolicy="no-referrer" />
+          </div>
+          <div class="logo-card float-anim" style="animation-delay:0.5s">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg" alt="Meta AI" class="partner-logo partner-logo-narrow" referrerpolicy="no-referrer" />
+          </div>
+          <div class="logo-card float-anim" style="animation-delay:1s">
+            <img src="https://www.vectorlogo.zone/logos/nvidia/nvidia-ar21.svg" alt="NVIDIA" class="partner-logo partner-logo-wide" referrerpolicy="no-referrer" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ABOUT ==================== -->
+    <section id="about" class="about-section section-divider">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-left reveal" data-reveal="left">
+            <span class="badge">Our Mission</span>
+            <h2 class="section-heading">Engineering <span class="text-primary">Intelligence</span> for the Modern Enterprise.</h2>
+            <p class="section-desc">
+              At Alomari Tech, we don't just build software; we engineer intelligence.
+              Our mission is to make advanced AI accessible and powerful for businesses of all sizes.
+            </p>
+            <div class="checklist">
+              <div class="check-item group-item">
+                <div class="check-icon">
+                  <i data-lucide="check-circle-2" class="icon-sm"></i>
+                </div>
+                <div>
+                  <h4>Mission-Driven Innovation</h4>
+                  <p>Pushing the boundaries of what's possible with AI automation.</p>
+                </div>
+              </div>
+              <div class="check-item group-item">
+                <div class="check-icon">
+                  <i data-lucide="check-circle-2" class="icon-sm"></i>
+                </div>
+                <div>
+                  <h4>Enterprise-Grade Security</h4>
+                  <p>Your data is protected by the most advanced security protocols.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="about-right">
+            <div class="feature-grid">
+              <div class="feature-card glass glass-hover spotlight-card reveal" data-reveal="up" style="transition-delay:0s">
+                <div class="feature-glow"></div>
+                <div class="feature-icon"><i data-lucide="brain"></i></div>
+                <h3>AI Development</h3>
+                <p>Custom-built machine learning models tailored to your specific business needs.</p>
+              </div>
+              <div class="feature-card glass glass-hover spotlight-card reveal" data-reveal="up" style="transition-delay:0.1s">
+                <div class="feature-glow"></div>
+                <div class="feature-icon"><i data-lucide="cpu"></i></div>
+                <h3>Automation Systems</h3>
+                <p>End-to-end process automation that eliminates manual bottlenecks.</p>
+              </div>
+              <div class="feature-card glass glass-hover spotlight-card reveal" data-reveal="up" style="transition-delay:0.2s">
+                <div class="feature-glow"></div>
+                <div class="feature-icon"><i data-lucide="bar-chart-3"></i></div>
+                <h3>Data Intelligence</h3>
+                <p>Transform raw data into actionable insights with advanced analytics.</p>
+              </div>
+              <div class="feature-card glass glass-hover spotlight-card reveal" data-reveal="up" style="transition-delay:0.3s">
+                <div class="feature-glow"></div>
+                <div class="feature-icon"><i data-lucide="cloud"></i></div>
+                <h3>Cloud AI Solutions</h3>
+                <p>Scalable, secure, and high-performance AI infrastructure in the cloud.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SERVICES ==================== -->
+    <section id="services" class="services-section">
+      <div class="orb orb-primary services-orb"></div>
+      <div class="container">
+        <div class="section-header reveal" data-reveal="up">
+          <span class="badge">Our Expertise</span>
+          <h2 class="section-heading">Comprehensive <span class="text-primary">AI Solutions</span></h2>
+          <p class="section-desc">From strategy to deployment, we provide the full spectrum of AI services to transform your business operations.</p>
+        </div>
+        <div class="services-grid">
+          <div class="service-card glass glass-hover spotlight-card reveal" data-reveal="up" style="transition-delay:0s">
+            <div class="service-bg-icon"><i data-lucide="brain"></i></div>
+            <div class="service-icon"><i data-lucide="brain"></i></div>
+            <h3>AI Development</h3>
+            <p>We build custom LLMs, computer vision systems, and predictive models that solve real-world problems.</p>
+            <div class="service-tags">
+              <span class="tag">LLMs</span><span class="tag">NLP</span><span class="tag">CV</span>
+            </div>
+          </div>
+          <div class="service-card glass glass-hover spotlight-card reveal" data-reveal="up" style="transition-delay:0.1s">
+            <div class="service-bg-icon"><i data-lucide="cpu"></i></div>
+            <div class="service-icon"><i data-lucide="cpu"></i></div>
+            <h3>Process Automation</h3>
+            <p>Intelligent workflows that handle repetitive tasks, from data entry to complex decision-making.</p>
+            <div class="service-tags">
+              <span class="tag">RPA</span><span class="tag">Workflows</span><span class="tag">API</span>
+            </div>
+          </div>
+          <div class="service-card glass glass-hover spotlight-card reveal" data-reveal="up" style="transition-delay:0.2s">
+            <div class="service-bg-icon"><i data-lucide="bar-chart-3"></i></div>
+            <div class="service-icon"><i data-lucide="bar-chart-3"></i></div>
+            <h3>Data Analytics</h3>
+            <p>Deep-dive intelligence systems that uncover hidden patterns and drive strategic growth.</p>
+            <div class="service-tags">
+              <span class="tag">BI</span><span class="tag">Predictive</span><span class="tag">Big Data</span>
+            </div>
+          </div>
+          <div class="service-card glass glass-hover spotlight-card reveal" data-reveal="up" style="transition-delay:0.3s">
+            <div class="service-bg-icon"><i data-lucide="cloud"></i></div>
+            <div class="service-icon"><i data-lucide="cloud"></i></div>
+            <h3>Cloud AI Solutions</h3>
+            <p>High-availability AI infrastructure designed to scale with your business demands.</p>
+            <div class="service-tags">
+              <span class="tag">AWS</span><span class="tag">Azure</span><span class="tag">GCP</span>
+            </div>
+          </div>
+          <div class="service-card glass glass-hover spotlight-card reveal" data-reveal="up" style="transition-delay:0.4s">
+            <div class="service-bg-icon"><i data-lucide="message-square"></i></div>
+            <div class="service-icon"><i data-lucide="message-square"></i></div>
+            <h3>Chatbots &amp; Assistants</h3>
+            <p>Next-gen conversational AI that provides human-like support and sales automation.</p>
+            <div class="service-tags">
+              <span class="tag">Support</span><span class="tag">Sales</span><span class="tag">24/7</span>
+            </div>
+          </div>
+          <div class="service-card glass glass-hover spotlight-card reveal" data-reveal="up" style="transition-delay:0.5s">
+            <div class="service-bg-icon"><i data-lucide="shield-check"></i></div>
+            <div class="service-icon"><i data-lucide="shield-check"></i></div>
+            <h3>Security &amp; Compliance</h3>
+            <p>Ensuring your AI systems are ethical, secure, and compliant with global regulations.</p>
+            <div class="service-tags">
+              <span class="tag">GDPR</span><span class="tag">SOC2</span><span class="tag">Ethics</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PROCESS ==================== -->
+    <section id="process" class="process-section">
+      <div class="container">
+        <div class="section-header reveal" data-reveal="up">
+          <span class="badge">Our Methodology</span>
+          <h2 class="section-heading">The <span class="text-primary">Alomari</span> Path</h2>
+        </div>
+        <div class="process-grid">
+          <div class="process-step reveal" data-reveal="up" style="transition-delay:0s">
+            <div class="step-num">01</div>
+            <div class="step-content">
+              <h3>Discovery</h3>
+              <p>We analyze your current workflows and identify high-impact automation opportunities.</p>
+            </div>
+            <div class="step-connector-h"></div>
+            <div class="step-connector-v"></div>
+          </div>
+          <div class="process-step reveal" data-reveal="up" style="transition-delay:0.2s">
+            <div class="step-num">02</div>
+            <div class="step-content">
+              <h3>Architecture</h3>
+              <p>Our engineers design a custom AI infrastructure tailored to your specific business goals.</p>
+            </div>
+            <div class="step-connector-h"></div>
+            <div class="step-connector-v"></div>
+          </div>
+          <div class="process-step reveal" data-reveal="up" style="transition-delay:0.4s">
+            <div class="step-num">03</div>
+            <div class="step-content">
+              <h3>Development</h3>
+              <p>We build and train proprietary ML models using your data in a secure environment.</p>
+            </div>
+            <div class="step-connector-h"></div>
+            <div class="step-connector-v"></div>
+          </div>
+          <div class="process-step reveal" data-reveal="up" style="transition-delay:0.6s">
+            <div class="step-num">04</div>
+            <div class="step-content">
+              <h3>Deployment</h3>
+              <p>Seamless integration into your existing systems with white-glove support.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CASE STUDIES ==================== -->
+    <section id="cases" class="cases-section">
+      <div class="orb orb-primary cases-orb"></div>
+      <div class="container">
+        <div class="cases-header">
+          <div class="reveal" data-reveal="left">
+            <span class="badge">Success Stories</span>
+            <h2 class="section-heading large">Proven <span class="text-primary">Impact</span>. Real Results.</h2>
+          </div>
+          <div class="reveal" data-reveal="right">
+            <a href="#contact" class="btn-link">View all case studies <i data-lucide="chevron-right"></i></a>
+          </div>
+        </div>
+        <div class="cases-grid">
+          <div class="case-card reveal" data-reveal="up" style="transition-delay:0s">
+            <div class="case-img-wrap">
+              <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800" alt="Global Logistics" class="case-img" referrerpolicy="no-referrer" />
+              <div class="case-overlay"></div>
+              <div class="case-badges">
+                <span class="badge-primary">65% Cost Reduction</span>
+                <span class="badge-outline">Efficiency +400%</span>
+              </div>
+            </div>
+            <h3>Global Logistics Corp</h3>
+            <p>Automated route optimization and warehouse management using predictive AI architectures.</p>
+          </div>
+          <div class="case-card reveal" data-reveal="up" style="transition-delay:0.1s">
+            <div class="case-img-wrap">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800" alt="FinTech" class="case-img" referrerpolicy="no-referrer" />
+              <div class="case-overlay"></div>
+              <div class="case-badges">
+                <span class="badge-primary">99.9% Fraud Detection</span>
+                <span class="badge-outline">ROI +320%</span>
+              </div>
+            </div>
+            <h3>FinTech Innovators</h3>
+            <p>Implemented real-time ML models for transaction monitoring and risk assessment at scale.</p>
+          </div>
+          <div class="case-card reveal" data-reveal="up" style="transition-delay:0.2s">
+            <div class="case-img-wrap">
+              <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800" alt="HealthTech" class="case-img" referrerpolicy="no-referrer" />
+              <div class="case-overlay"></div>
+              <div class="case-badges">
+                <span class="badge-primary">45% Faster Diagnosis</span>
+                <span class="badge-outline">Patient Care +80%</span>
+              </div>
+            </div>
+            <h3>HealthTech Systems</h3>
+            <p>AI-powered diagnostic assistant for medical imaging and patient records processing.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TEAM ==================== -->
+    <section id="team" class="team-section section-divider">
+      <div class="container">
+        <div class="section-header reveal" data-reveal="up">
+          <span class="badge">The Minds Behind Alomari Tech</span>
+          <h2 class="section-heading">Our <span class="text-primary">Leadership</span></h2>
+          <p class="section-desc">A world-class team of AI experts, engineers, and strategists dedicated to your success.</p>
+        </div>
+        <div class="team-grid">
+          <!-- Founder (highlighted) -->
+          <div class="team-card glass team-highlight reveal" data-reveal="up" style="transition-delay:0s">
+            <div class="team-glow-ring"></div>
+            <div class="founder-badge">FOUNDER</div>
+            <div class="team-img-wrap">
+              <img src="https://i.ibb.co/Mx4s5rBT/Amir-Alomari-Suit.jpg" alt="Amir Alomari" class="team-img" referrerpolicy="no-referrer" />
+            </div>
+            <div class="team-info">
+              <h3 class="team-name text-primary">Amir Alomari</h3>
+              <div class="team-role-row"><span class="role-line"></span><span class="team-role">CEO &amp; Founder</span></div>
+              <p class="team-desc">Visionary leader driving Alomari Tech to redefine the future of business intelligence through cutting-edge AI automation.</p>
+              <div class="team-skills">
+                <span class="skill-badge">AI Strategy</span>
+                <span class="skill-badge">Machine Learning</span>
+                <span class="skill-badge">Visionary Leadership</span>
+              </div>
+            </div>
+            <div class="team-socials">
+              <a href="#" class="team-social"><i data-lucide="linkedin"></i></a>
+              <a href="#" class="team-social"><i data-lucide="twitter"></i></a>
+              <a href="#" class="team-social"><i data-lucide="github"></i></a>
+            </div>
+          </div>
+
+          <div class="team-card glass reveal" data-reveal="up" style="transition-delay:0.1s">
+            <div class="team-img-wrap">
+              <img src="https://i.ibb.co/6czKCPV3/Omar.png" alt="Omar Khalid" class="team-img" referrerpolicy="no-referrer" />
+            </div>
+            <div class="team-info">
+              <h3 class="team-name">Omar Khalid</h3>
+              <div class="team-role-row"><span class="role-line"></span><span class="team-role">AI Specialist</span></div>
+              <p class="team-desc">Expert in deep learning architectures and predictive modeling systems.</p>
+              <div class="team-skills">
+                <span class="skill-badge">Deep Learning</span>
+                <span class="skill-badge">NLP</span>
+                <span class="skill-badge">Predictive Modeling</span>
+              </div>
+            </div>
+            <div class="team-socials">
+              <a href="#" class="team-social"><i data-lucide="linkedin"></i></a>
+              <a href="#" class="team-social"><i data-lucide="twitter"></i></a>
+              <a href="#" class="team-social"><i data-lucide="github"></i></a>
+            </div>
+          </div>
+
+          <div class="team-card glass reveal" data-reveal="up" style="transition-delay:0.2s">
+            <div class="team-img-wrap">
+              <img src="https://i.ibb.co/xS71NpFq/Samir-Haddad.jpg" alt="Samir Haddad" class="team-img" referrerpolicy="no-referrer" />
+            </div>
+            <div class="team-info">
+              <h3 class="team-name">Samir Haddad</h3>
+              <div class="team-role-row"><span class="role-line"></span><span class="team-role">Operations Director</span></div>
+              <p class="team-desc">Optimizing internal workflows and ensuring seamless project delivery.</p>
+              <div class="team-skills">
+                <span class="skill-badge">Team Management</span>
+                <span class="skill-badge">HR Systems</span>
+                <span class="skill-badge">Operations</span>
+              </div>
+            </div>
+            <div class="team-socials">
+              <a href="#" class="team-social"><i data-lucide="linkedin"></i></a>
+              <a href="#" class="team-social"><i data-lucide="twitter"></i></a>
+              <a href="#" class="team-social"><i data-lucide="github"></i></a>
+            </div>
+          </div>
+
+          <div class="team-card glass reveal" data-reveal="up" style="transition-delay:0.3s">
+            <div class="team-img-initials">LM</div>
+            <div class="team-info">
+              <h3 class="team-name">Layla Mansour</h3>
+              <div class="team-role-row"><span class="role-line"></span><span class="team-role">CTO</span></div>
+              <p class="team-desc">Architect of our high-performance cloud AI infrastructure.</p>
+              <div class="team-skills">
+                <span class="skill-badge">Cloud Architecture</span>
+                <span class="skill-badge">Distributed Systems</span>
+                <span class="skill-badge">Backend</span>
+              </div>
+            </div>
+            <div class="team-socials">
+              <a href="#" class="team-social"><i data-lucide="linkedin"></i></a>
+              <a href="#" class="team-social"><i data-lucide="twitter"></i></a>
+              <a href="#" class="team-social"><i data-lucide="github"></i></a>
+            </div>
+          </div>
+
+          <div class="team-card glass reveal" data-reveal="up" style="transition-delay:0.4s">
+            <div class="team-img-initials">ZF</div>
+            <div class="team-info">
+              <h3 class="team-name">Zaid Al-Farsi</h3>
+              <div class="team-role-row"><span class="role-line"></span><span class="team-role">Lead Data Scientist</span></div>
+              <p class="team-desc">Transforming complex data into strategic business intelligence.</p>
+              <div class="team-skills">
+                <span class="skill-badge">Data Science</span>
+                <span class="skill-badge">Statistics</span>
+                <span class="skill-badge">Big Data</span>
+              </div>
+            </div>
+            <div class="team-socials">
+              <a href="#" class="team-social"><i data-lucide="linkedin"></i></a>
+              <a href="#" class="team-social"><i data-lucide="twitter"></i></a>
+              <a href="#" class="team-social"><i data-lucide="github"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PRICING ==================== -->
+    <section id="pricing" class="pricing-section">
+      <div class="orb pricing-orb-center"></div>
+      <div class="orb orb-purple pricing-orb-right"></div>
+      <div class="container">
+        <div class="section-header reveal" data-reveal="up">
+          <span class="badge">Pricing Plans</span>
+          <h2 class="section-heading">Invest in <span class="text-primary">Intelligence</span></h2>
+          <p class="section-desc">Choose the plan that fits your business scale and automation needs. Save 20% with annual billing.</p>
+          <!-- Billing Toggle -->
+          <div class="billing-toggle">
+            <span class="billing-label" id="label-monthly">Monthly</span>
+            <button class="toggle-switch" id="billing-toggle" aria-label="Toggle billing cycle">
+              <div class="toggle-knob" id="toggle-knob"></div>
+            </button>
+            <span class="billing-label" id="label-yearly">Yearly</span>
+            <span class="save-badge">SAVE 20%</span>
+          </div>
+        </div>
+
+        <div class="pricing-grid">
+          <!-- Core AI -->
+          <div class="pricing-card glass spotlight-card reveal" data-reveal="up" style="transition-delay:0s">
+            <div class="pricing-icon"><i data-lucide="zap"></i></div>
+            <h3 class="pricing-name">Core AI</h3>
+            <div class="pricing-price-row">
+              <span class="pricing-price" data-monthly="$1,250" data-yearly="$12,000">$1,250</span>
+              <span class="pricing-period">/mo</span>
+            </div>
+            <p class="pricing-desc">Essential AI automation for small teams and startups looking to scale.</p>
+            <hr class="pricing-divider" />
+            <ul class="pricing-features">
+              <li><span class="check-circle"><i data-lucide="check"></i></span>Custom AI Chatbot Integration</li>
+              <li><span class="check-circle"><i data-lucide="check"></i></span>Automated Email Workflows</li>
+              <li><span class="check-circle"><i data-lucide="check"></i></span>Basic Data Analytics Dashboard</li>
+              <li><span class="check-circle"><i data-lucide="check"></i></span>Standard API Access</li>
+              <li><span class="check-circle"><i data-lucide="check"></i></span>Email &amp; Discord Support</li>
+              <li><span class="check-circle"><i data-lucide="check"></i></span>Monthly Performance Report</li>
+              <li><span class="check-circle"><i data-lucide="check"></i></span>Up to 5,000 AI Operations/mo</li>
+            </ul>
+            <button class="btn btn-ghost btn-pricing magnetic" onclick="selectPlan('Core AI')">
+              Get Started <i data-lucide="arrow-right" class="icon-xs"></i>
+            </button>
+          </div>
+
+          <!-- Scale AI (Popular) -->
+          <div class="pricing-card glass pricing-popular spotlight-card reveal" data-reveal="up" style="transition-delay:0.1s">
+            <div class="popular-glow"></div>
+            <div class="popular-badge">
+              <span>MOST POPULAR</span>
+              <div class="shimmer"></div>
+            </div>
+            <div class="pricing-icon pricing-icon-primary"><i data-lucide="brain"></i></div>
+            <h3 class="pricing-name">Scale AI</h3>
+            <div class="pricing-price-row">
+              <span class="pricing-price" data-monthly="$2,850" data-yearly="$27,360">$2,850</span>
+              <span class="pricing-period">/mo</span>
+            </div>
+            <p class="pricing-desc">Advanced intelligence for rapidly growing enterprises with complex needs.</p>
+            <hr class="pricing-divider" />
+            <ul class="pricing-features">
+              <li><span class="check-circle"><i data-lucide="check"></i></span>Proprietary ML Model Development</li>
+              <li><span class="check-circle"><i data-lucide="check"></i></span>Full Process Automation Suite</li>
+              <li><span class="check-circle"><i data-lucide="check"></i></span>Advanced Predictive Analytics</li>
+              <li><span class="check-circle"><i data-lucide="check"></i></span>Priority API &amp; Webhook Access</li>
+              <li><span class="check-circle"><i data-lucide="check"></i></span>24/7 Dedicated Support</li>
+              <li><span class="check-circle"><i data-lucide="check"></i></span>Weekly Optimization Calls</li>
+              <li><span class="check-circle"><i data-lucide="check"></i></span>AI Security &amp; Compliance Audit</li>
+              <li><span class="check-circle"><i data-lucide="check"></i></span>Unlimited AI Operations</li>
+            </ul>
+            <button class="btn btn-primary btn-pricing magnetic" onclick="selectPlan('Scale AI')">
+              Get Started <i data-lucide="arrow-right" class="icon-xs"></i>
+            </button>
+          </div>
+
+          <!-- Nexus AI -->
+          <div class="pricing-card glass spotlight-card reveal" data-reveal="up" style="transition-delay:0.2s">
+            <div class="pricing-icon"><i data-lucide="shield"></i></div>
+            <h3 class="pricing-name">Nexus AI</h3>
+            <div class="pricing-price-row">
+              <span class="pricing-price" data-monthly="Custom" data-yearly="Custom">Custom</span>
+            </div>
+            <p class="pricing-desc">Full-scale AI transformation and dedicated engineering for global leaders.</p>
+            <hr class="pricing-divider" />
+            <ul class="pricing-features">
+              <li><span class="check-circle"><i data-lucide="check"></i></span>Unlimited Custom AI Development</li>
+              <li><span class="check-circle"><i data-lucide="check"></i></span>On-Premise LLM Deployment</li>
+              <li><span class="check-circle"><i data-lucide="check"></i></span>Dedicated AI Solutions Architect</li>
+              <li><span class="check-circle"><i data-lucide="check"></i></span>White-Glove Implementation</li>
+              <li><span class="check-circle"><i data-lucide="check"></i></span>Custom Data Pipeline Engineering</li>
+              <li><span class="check-circle"><i data-lucide="check"></i></span>Lifetime Maintenance &amp; Updates</li>
+              <li><span class="check-circle"><i data-lucide="check"></i></span>Strategic AI Roadmap Planning</li>
+              <li><span class="check-circle"><i data-lucide="check"></i></span>Dedicated GPU Infrastructure</li>
+            </ul>
+            <button class="btn btn-ghost btn-pricing magnetic" onclick="selectPlan('Nexus AI')">
+              Get Started <i data-lucide="arrow-right" class="icon-xs"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Comparison Table -->
+        <div class="comparison-table reveal" data-reveal="up">
+          <h3 class="comparison-title">Detailed <span class="text-primary">Comparison</span></h3>
+          <div class="glass table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Feature</th>
+                  <th>Core AI</th>
+                  <th class="text-primary">Scale AI</th>
+                  <th>Nexus AI</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>AI Operations / mo</td><td>5,000</td><td class="popular-col">Unlimited</td><td>Unlimited</td></tr>
+                <tr><td>Custom Chatbots</td><td>1</td><td class="popular-col">Unlimited</td><td>Unlimited</td></tr>
+                <tr><td>ML Model Training</td><td>Basic</td><td class="popular-col">Proprietary</td><td>Custom / On-Prem</td></tr>
+                <tr><td>Support Response</td><td>24h</td><td class="popular-col">1h Priority</td><td>Instant Dedicated</td></tr>
+                <tr><td>API Access</td><td>Standard</td><td class="popular-col">Priority</td><td>Full Enterprise</td></tr>
+                <tr><td>Security Audits</td><td>No</td><td class="popular-col">Quarterly</td><td>Continuous</td></tr>
+                <tr><td>Custom Integration</td><td>Limited</td><td class="popular-col">Full Suite</td><td>White-Glove</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Payment Trust Badges -->
+        <div class="trust-badges reveal" data-reveal="up">
+          <p>Secure Enterprise Payments</p>
+          <div class="trust-logos">
+            <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/stripe.svg" alt="Stripe" class="trust-logo" referrerpolicy="no-referrer" />
+            <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/visa.svg" alt="Visa" class="trust-logo" referrerpolicy="no-referrer" />
+            <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/mastercard.svg" alt="Mastercard" class="trust-logo" referrerpolicy="no-referrer" />
+            <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/bitcoin.svg" alt="Bitcoin" class="trust-logo" referrerpolicy="no-referrer" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FAQ ==================== -->
+    <section id="faq" class="faq-section">
+      <div class="container faq-container">
+        <div class="section-header reveal" data-reveal="up">
+          <span class="badge">Common Questions</span>
+          <h2 class="section-heading">Everything You <span class="text-primary">Need to Know</span></h2>
+        </div>
+        <div class="accordion" id="faq-accordion">
+          <div class="accordion-item glass reveal" data-reveal="up" style="transition-delay:0s">
+            <button class="accordion-trigger" data-accordion="0">
+              <span>How long does a typical implementation take?</span>
+              <i data-lucide="chevron-down" class="accordion-icon"></i>
+            </button>
+            <div class="accordion-content" id="accordion-content-0">
+              <p>Depending on complexity, most custom AI solutions are deployed within 4 to 12 weeks, including discovery and training phases.</p>
+            </div>
+          </div>
+          <div class="accordion-item glass reveal" data-reveal="up" style="transition-delay:0.1s">
+            <button class="accordion-trigger" data-accordion="1">
+              <span>Is my data secure during AI training?</span>
+              <i data-lucide="chevron-down" class="accordion-icon"></i>
+            </button>
+            <div class="accordion-content" id="accordion-content-1">
+              <p>Absolutely. We use enterprise-grade encryption and can deploy on-premise or in private clouds to ensure your data never leaves your controlled environment.</p>
+            </div>
+          </div>
+          <div class="accordion-item glass reveal" data-reveal="up" style="transition-delay:0.2s">
+            <button class="accordion-trigger" data-accordion="2">
+              <span>Do you offer post-deployment support?</span>
+              <i data-lucide="chevron-down" class="accordion-icon"></i>
+            </button>
+            <div class="accordion-content" id="accordion-content-2">
+              <p>Yes, all our plans include dedicated support. Our Nexus AI plan even includes lifetime maintenance and strategic roadmap planning.</p>
+            </div>
+          </div>
+          <div class="accordion-item glass reveal" data-reveal="up" style="transition-delay:0.3s">
+            <button class="accordion-trigger" data-accordion="3">
+              <span>Can your AI integrate with our existing software?</span>
+              <i data-lucide="chevron-down" class="accordion-icon"></i>
+            </button>
+            <div class="accordion-content" id="accordion-content-3">
+              <p>Our systems are built with a 'Nexus-First' approach, meaning they are designed to integrate seamlessly via robust APIs and webhooks with almost any modern software stack.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT ==================== -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="contact-grid glass">
+          <!-- Left Panel -->
+          <div class="contact-left">
+            <div class="contact-left-bg"></div>
+            <div class="contact-left-content">
+              <span class="badge">Get in Touch</span>
+              <h2 class="section-heading">Ready to <span class="text-primary">Automate</span>?</h2>
+              <p class="section-desc">Our team of AI experts is here to help you scale with intelligence.</p>
+
+              <!-- Selected Plan Banner -->
+              <div class="selected-plan-banner" id="selected-plan-banner" style="display:none">
+                <div class="selected-plan-icon"><i data-lucide="zap"></i></div>
+                <div>
+                  <p class="selected-plan-label">Selected Plan</p>
+                  <p class="selected-plan-name" id="selected-plan-name"></p>
+                </div>
+                <button class="selected-plan-close" onclick="selectPlan(null)"><i data-lucide="x"></i></button>
+              </div>
+
+              <div class="contact-info">
+                <div class="contact-info-item group-item">
+                  <div class="contact-info-icon"><i data-lucide="mail"></i></div>
+                  <div>
+                    <p class="info-label">Email Us</p>
+                    <a href="mailto:alomaritech@gmail.com" class="info-value">alomaritech@gmail.com</a>
+                  </div>
+                </div>
+                <div class="contact-info-item group-item">
+                  <div class="contact-info-icon"><i data-lucide="map-pin"></i></div>
+                  <div>
+                    <p class="info-label">Our HQ</p>
+                    <p class="info-value">Sydney, Australia</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="contact-trust">
+              <div class="trust-avatars">
+                <div class="trust-avatar"><img src="https://picsum.photos/seed/user1/100/100" alt="User" referrerpolicy="no-referrer" /></div>
+                <div class="trust-avatar"><img src="https://picsum.photos/seed/user2/100/100" alt="User" referrerpolicy="no-referrer" /></div>
+                <div class="trust-avatar"><img src="https://picsum.photos/seed/user3/100/100" alt="User" referrerpolicy="no-referrer" /></div>
+                <div class="trust-avatar"><img src="https://picsum.photos/seed/user4/100/100" alt="User" referrerpolicy="no-referrer" /></div>
+              </div>
+              <div>
+                <p class="trust-count">Joined by 500+ companies</p>
+                <p class="trust-sub">Trusted by industry leaders worldwide</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Panel: Form -->
+          <div class="contact-right">
+            <!-- Success State -->
+            <div class="contact-success" id="contact-success" style="display:none">
+              <div class="success-icon"><i data-lucide="check-circle-2"></i></div>
+              <h3>Message Sent!</h3>
+              <p>Thank you for reaching out. Our team will get back to you soon.</p>
+              <button class="btn btn-outline btn-rounded" onclick="resetForm()">Send another message</button>
+            </div>
+
+            <!-- Form -->
+            <form class="contact-form" id="contact-form" novalidate>
+              <!-- Selected Plan in form -->
+              <div class="form-plan-row" id="form-plan-row" style="display:none">
+                <span id="form-plan-text"></span>
+                <button type="button" class="btn btn-ghost btn-sm" onclick="selectPlan(null)">Change</button>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Full Name</label>
+                  <input type="text" name="fullName" placeholder="John Doe" required />
+                </div>
+                <div class="form-group">
+                  <label>Work Email</label>
+                  <input type="email" name="email" placeholder="john@company.com" required />
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Company Name</label>
+                <input type="text" name="company" placeholder="Acme Inc." />
+              </div>
+              <div class="form-group">
+                <label>Project Details</label>
+                <textarea name="message" placeholder="Tell us about your automation goals..." required></textarea>
+              </div>
+              <div class="form-error" id="form-error" style="display:none"></div>
+              <button type="submit" class="btn btn-primary btn-submit" id="submit-btn">
+                <span id="submit-text">Send Message <i data-lucide="arrow-right" class="icon-xs"></i></span>
+                <span id="submit-loading" style="display:none"><i data-lucide="loader-2" class="icon-sm spin"></i> Sending...</span>
+              </button>
+              <p class="form-note">Typical response time: <span class="text-primary">Under 2 hours</span></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="navbar-logo mb-4">
+            <div class="logo-icon logo-icon-sm"><i data-lucide="brain" class="icon-white icon-sm"></i></div>
+            <span class="logo-text-sm">ALOMARI <span class="text-primary">TECH</span></span>
+          </div>
+          <p>Building the next generation of intelligent automation systems. Empowering businesses to scale with AI.</p>
+          <div class="footer-socials">
+            <a href="#" class="footer-social"><i data-lucide="linkedin"></i></a>
+            <a href="#" class="footer-social"><i data-lucide="twitter"></i></a>
+            <a href="#" class="footer-social"><i data-lucide="github"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Solutions</h4>
+          <ul>
+            <li><a href="#">AI Development</a></li>
+            <li><a href="#">Process Automation</a></li>
+            <li><a href="#">Data Intelligence</a></li>
+            <li><a href="#">Cloud AI</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Case Studies</a></li>
+            <li><a href="#">Team</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="text-primary">Contact</h4>
+          <ul>
+            <li class="footer-contact-item"><i data-lucide="mail" class="icon-xs text-primary"></i><a href="mailto:alomaritech@gmail.com">alomaritech@gmail.com</a></li>
+            <li class="footer-contact-item"><i data-lucide="map-pin" class="icon-xs text-primary"></i><span>Sydney, Australia</span></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Newsletter</h4>
+          <p class="footer-newsletter-desc">Get the latest AI insights delivered to your inbox.</p>
+          <div class="newsletter-row">
+            <input type="email" placeholder="Email address" class="newsletter-input" />
+            <button class="btn btn-primary btn-icon"><i data-lucide="arrow-right" class="icon-xs"></i></button>
+          </div>
+        </div>
+      </div>
+      <hr class="footer-divider" />
+      <div class="footer-bottom">
+        <p>&copy; 2026 Alomari Tech. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
