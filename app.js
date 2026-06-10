@@ -148,13 +148,16 @@ document.querySelectorAll('.magnetic').forEach(btn => {
 });
 
 // ============================================================
-// REVEAL ON SCROLL (IntersectionObserver)
+// REVEAL ON SCROLL (IntersectionObserver) — Bidirectional
+// Triggers when scrolling DOWN into view AND UP back into view
 // ============================================================
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
-      revealObserver.unobserve(entry.target);
+    } else {
+      // Remove 'visible' when element leaves viewport — re-animates on scroll back up
+      entry.target.classList.remove('visible');
     }
   });
 }, { threshold: 0.1, rootMargin: '-60px 0px' });
@@ -390,6 +393,10 @@ const connectorObserver = new IntersectionObserver((entries) => {
         entry.target.style.width = '2rem';
         entry.target.style.opacity = '1';
       }, i * 300);
+    } else {
+      // Reset when out of view so it re-animates on scroll up
+      entry.target.style.width = '0';
+      entry.target.style.opacity = '0';
     }
   });
 }, { threshold: 0.5 });
