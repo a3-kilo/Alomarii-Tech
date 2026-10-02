@@ -187,8 +187,17 @@ button { color: inherit; }
 .partners-intro { display: flex; gap: 18px; align-items: center; padding-left: 28px; }
 .partners-intro p { margin: 0; font-size: 13px; font-weight: 550; }
 .section-index { font-size: 10px; font-weight: 650; letter-spacing: .12em; color: var(--muted-2); }
-.partner-logos { display: grid; grid-template-columns: repeat(3,1fr); align-items: center; padding-right: 20px; }
-.partner-logos img { width: min(70%, 140px); max-height: 42px; object-fit: contain; justify-self: center; filter: grayscale(1); opacity: .68; }
+.partner-logos { display: grid; grid-template-columns: repeat(4,1fr); align-items: center; padding-right: 20px; }
+.partner-logos img {
+  width: min(72%, 142px) !important;
+  max-height: 42px !important;
+  object-fit: contain;
+  justify-self: center;
+  filter: none !important;
+  opacity: .94 !important;
+  transition: opacity var(--fast), transform var(--fast);
+}
+.partner-logos img:hover { opacity: 1 !important; transform: translateY(-1px); }
 
 /* Common headings */
 .section-meta { display: flex; gap: 14px; align-items: baseline; font-size: 10px; font-weight: 650; text-transform: uppercase; letter-spacing: .12em; color: var(--muted-2); }
@@ -591,8 +600,8 @@ button { color: inherit; }
   .partners { padding-top: 12px; }
   .partners-row { min-height: 0; padding-block: 16px; border-radius: 20px; }
   .partners-intro { padding-inline: 16px; }
-  .partner-logos { grid-template-columns: repeat(3,1fr); min-height: 64px; }
-  .partner-logos img { width: 80%; max-height: 34px; }
+  .partner-logos { grid-template-columns: repeat(2,1fr) !important; min-height: 64px; row-gap: 18px; }
+  .partner-logos img { width: min(76%, 136px) !important; max-height: 34px !important; }
 
   .display-heading { font-size: clamp(38px, 11vw, 52px); line-height: 1.02; }
   .lead-copy { margin-top: 18px; font-size: 16px; line-height: 1.55; }
@@ -693,7 +702,7 @@ button { color: inherit; }
   .hero-actions { grid-template-columns: 1fr; }
   .hero-title { font-size: 46px; }
   .hero-brand-panel { min-height: 220px; }
-  .partner-logos img { width: 86%; max-height: 30px; }
+  .partner-logos img { width: min(80%, 128px) !important; max-height: 30px !important; }
   .team-member, .team-member:nth-child(odd), .team-member:nth-child(even) { grid-template-columns: 74px 1fr; }
   .team-member .team-photo { width: 74px; height: 92px; }
   .team-member .team-details h3 { font-size: 19px; }
