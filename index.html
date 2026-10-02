@@ -413,11 +413,6 @@
           <h2 class="display-heading">Ready to automate?</h2>
           <p class="lead-copy">Our team of AI experts is here to help you scale with intelligence.</p>
 
-          <div class="selected-plan-banner" id="selected-plan-banner" hidden>
-            <div><span>Selected Plan</span><strong id="selected-plan-name"></strong></div>
-            <button type="button" onclick="selectPlan(null)" aria-label="Clear selected plan"><i data-lucide="x" aria-hidden="true"></i></button>
-          </div>
-
           <dl class="contact-details">
             <div><dt>Email Us</dt><dd><a href="mailto:alomaritech@gmail.com">alomaritech@gmail.com</a></dd></div>
             <div><dt>Our HQ</dt><dd>Sydney, Australia</dd></div>
@@ -425,25 +420,144 @@
           <div class="contact-proof"><strong>Joined by 500+ companies</strong><span>Trusted by industry leaders worldwide</span></div>
         </div>
 
-        <div class="contact-form-shell reveal">
+        <div class="contact-form-shell reveal" id="project-form-shell">
           <div class="contact-success" id="contact-success" hidden tabindex="-1">
             <div class="success-mark"><i data-lucide="check" aria-hidden="true"></i></div>
-            <h3>Message Sent!</h3>
-            <p>Thank you for reaching out. Our team will get back to you soon.</p>
-            <button class="btn btn-line" type="button" onclick="resetForm()">Send another message</button>
+            <p class="success-kicker">Request received</p>
+            <h3>You're all set.</h3>
+            <p id="success-message">We sent a confirmation email and your project request is now with our team.</p>
+            <div class="success-summary" aria-label="Submitted request summary">
+              <div><span>Plan</span><strong id="success-plan">General Inquiry</strong></div>
+              <div><span>Confirmation</span><strong id="success-email">Your email</strong></div>
+            </div>
+            <button class="btn btn-line" type="button" onclick="resetForm()">Start another request</button>
           </div>
 
           <form class="contact-form" id="contact-form" novalidate>
-            <div class="form-plan-row" id="form-plan-row" hidden><span id="form-plan-text"></span><button type="button" onclick="selectPlan(null)">Change</button></div>
-            <div class="form-row">
-              <div class="form-group"><label for="full-name">Full Name</label><input id="full-name" type="text" name="fullName" autocomplete="name" placeholder="John Doe" required /></div>
-              <div class="form-group"><label for="work-email">Work Email</label><input id="work-email" type="email" name="email" autocomplete="email" placeholder="john@company.com" required /></div>
+            <div class="project-form-head">
+              <div>
+                <p class="form-kicker">Start a project</p>
+                <div class="form-step-copy"><strong id="form-step-label">Your details</strong><span id="form-step-count">1 of 3</span></div>
+              </div>
+              <div class="form-progress" aria-hidden="true"><span id="form-progress-bar"></span></div>
             </div>
-            <div class="form-group"><label for="company-name">Company Name</label><input id="company-name" type="text" name="company" autocomplete="organization" placeholder="Acme Inc." /></div>
-            <div class="form-group"><label for="project-details">Project Details</label><textarea id="project-details" name="message" placeholder="Tell us about your automation goals..." required></textarea></div>
-            <div class="form-error" id="form-error" role="alert" hidden></div>
-            <button type="submit" class="btn btn-dark btn-submit" id="submit-btn"><span id="submit-text">Send Message <i data-lucide="arrow-right" aria-hidden="true"></i></span><span id="submit-loading" hidden><i data-lucide="loader-circle" class="spin" aria-hidden="true"></i> Sending...</span></button>
-            <p class="form-note">Typical response time: <strong>Under 2 hours</strong></p>
+
+            <div class="form-plan-summary" id="form-plan-summary">
+              <div>
+                <span>Plan</span>
+                <strong id="form-plan-name">Not sure yet</strong>
+                <small id="form-plan-billing">We'll help you choose the right fit.</small>
+              </div>
+              <button type="button" id="change-plan-btn" aria-expanded="false" aria-controls="inline-plan-selector">Change plan</button>
+            </div>
+
+            <div class="inline-plan-selector" id="inline-plan-selector" hidden>
+              <p>Choose a plan</p>
+              <div class="inline-plan-options" role="list">
+                <button type="button" class="inline-plan-option" data-plan="General Inquiry">
+                  <span>Not sure yet</span><small>Tell us what you need and we'll guide you.</small>
+                </button>
+                <button type="button" class="inline-plan-option" data-plan="Core AI">
+                  <span>Core AI</span><small>Focused automation for smaller teams.</small>
+                </button>
+                <button type="button" class="inline-plan-option" data-plan="Scale AI">
+                  <span>Scale AI</span><small>Advanced automation for growing operations.</small>
+                </button>
+                <button type="button" class="inline-plan-option" data-plan="Nexus AI">
+                  <span>Nexus AI</span><small>Custom transformation and dedicated engineering.</small>
+                </button>
+              </div>
+            </div>
+
+            <div class="form-step is-active" data-form-step="1">
+              <div class="form-step-intro">
+                <h3>First, how can we reach you?</h3>
+                <p>Just the essentials. We'll use these details only to follow up about your request.</p>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group"><label for="full-name">Full name</label><input id="full-name" type="text" name="fullName" autocomplete="name" placeholder="Your name" required /></div>
+                <div class="form-group"><label for="work-email">Email</label><input id="work-email" type="email" name="email" autocomplete="email" inputmode="email" placeholder="you@company.com" required /></div>
+              </div>
+              <div class="form-row">
+                <div class="form-group"><label for="company-name">Company <span>Optional</span></label><input id="company-name" type="text" name="company" autocomplete="organization" placeholder="Company name" /></div>
+                <div class="form-group"><label for="phone-number">Phone <span>Optional</span></label><input id="phone-number" type="tel" name="phone" autocomplete="tel" inputmode="tel" placeholder="+965 ..." /></div>
+              </div>
+
+              <div class="form-actions form-actions-single">
+                <button type="button" class="btn btn-dark btn-next" data-next-step>Continue <i data-lucide="arrow-right" aria-hidden="true"></i></button>
+              </div>
+            </div>
+
+            <div class="form-step" data-form-step="2" hidden>
+              <div class="form-step-intro">
+                <h3>What would you like to improve?</h3>
+                <p>Pick the closest option. You do not need to know the technical solution yet.</p>
+              </div>
+
+              <fieldset class="form-fieldset">
+                <legend>Project focus</legend>
+                <div class="choice-list">
+                  <label class="choice-row"><input type="radio" name="projectFocus" value="Process automation" /><span><strong>Process automation</strong><small>Reduce repetitive work and manual handoffs.</small></span><i data-lucide="arrow-right" aria-hidden="true"></i></label>
+                  <label class="choice-row"><input type="radio" name="projectFocus" value="AI assistant or chatbot" /><span><strong>AI assistant or chatbot</strong><small>Support, sales, internal knowledge, or workflow assistance.</small></span><i data-lucide="arrow-right" aria-hidden="true"></i></label>
+                  <label class="choice-row"><input type="radio" name="projectFocus" value="Data and analytics" /><span><strong>Data &amp; analytics</strong><small>Turn operational data into clearer decisions and reporting.</small></span><i data-lucide="arrow-right" aria-hidden="true"></i></label>
+                  <label class="choice-row"><input type="radio" name="projectFocus" value="Custom AI or machine learning" /><span><strong>Custom AI / ML</strong><small>Build a model or intelligent system around your use case.</small></span><i data-lucide="arrow-right" aria-hidden="true"></i></label>
+                  <label class="choice-row"><input type="radio" name="projectFocus" value="Integrations and systems" /><span><strong>Integrations &amp; systems</strong><small>Connect tools, APIs, data, and existing software.</small></span><i data-lucide="arrow-right" aria-hidden="true"></i></label>
+                  <label class="choice-row"><input type="radio" name="projectFocus" value="Not sure yet" /><span><strong>Not sure yet</strong><small>Describe the problem and we'll help shape the approach.</small></span><i data-lucide="arrow-right" aria-hidden="true"></i></label>
+                </div>
+              </fieldset>
+
+              <div class="form-group">
+                <label for="project-details">What should we know?</label>
+                <textarea id="project-details" name="message" placeholder="A few sentences about the problem, workflow, or outcome you want..." required></textarea>
+                <p class="field-help">Keep it simple. Two or three sentences is enough.</p>
+              </div>
+
+              <div class="form-actions">
+                <button type="button" class="btn btn-line" data-prev-step>Back</button>
+                <button type="button" class="btn btn-dark btn-next" data-next-step>Continue <i data-lucide="arrow-right" aria-hidden="true"></i></button>
+              </div>
+            </div>
+
+            <div class="form-step" data-form-step="3" hidden>
+              <div class="form-step-intro">
+                <h3>Last details.</h3>
+                <p>This helps us understand urgency and prepare a useful first response.</p>
+              </div>
+
+              <fieldset class="form-fieldset compact-fieldset">
+                <legend>When would you like to start?</legend>
+                <div class="timeline-grid">
+                  <label><input type="radio" name="timeline" value="As soon as possible" /><span>As soon as possible</span></label>
+                  <label><input type="radio" name="timeline" value="Within 1 month" /><span>Within 1 month</span></label>
+                  <label><input type="radio" name="timeline" value="1 to 3 months" /><span>1–3 months</span></label>
+                  <label><input type="radio" name="timeline" value="Exploring options" /><span>Exploring options</span></label>
+                </div>
+              </fieldset>
+
+              <div class="form-group"><label for="current-tools">Current tools or systems <span>Optional</span></label><input id="current-tools" type="text" name="currentTools" placeholder="e.g. Shopify, HubSpot, Excel, custom software" /></div>
+
+              <div class="request-review" aria-live="polite">
+                <p>Request summary</p>
+                <dl>
+                  <div><dt>Plan</dt><dd id="review-plan">Not sure yet</dd></div>
+                  <div><dt>Project</dt><dd id="review-focus">—</dd></div>
+                  <div><dt>Timing</dt><dd id="review-timeline">—</dd></div>
+                </dl>
+              </div>
+
+              <div class="form-error" id="form-error" role="alert" hidden></div>
+
+              <div class="form-actions">
+                <button type="button" class="btn btn-line" data-prev-step>Back</button>
+                <button type="submit" class="btn btn-dark btn-submit" id="submit-btn"><span id="submit-text">Send project request <i data-lucide="arrow-right" aria-hidden="true"></i></span><span id="submit-loading" hidden><i data-lucide="loader-circle" class="spin" aria-hidden="true"></i> Sending...</span></button>
+              </div>
+
+              <p class="form-note">No commitment. We'll reply by email with the next step.</p>
+            </div>
+
+            <div class="form-error form-error-global" id="form-error-global" role="alert" hidden></div>
+            <div class="form-honeypot" aria-hidden="true"><label for="website-field">Website</label><input id="website-field" type="text" name="website" tabindex="-1" autocomplete="off" /></div>
           </form>
         </div>
       </div>
