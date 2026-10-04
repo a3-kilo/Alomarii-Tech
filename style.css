@@ -31,7 +31,17 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+html { scroll-behavior: smooth; scroll-padding-top: 88px; scrollbar-width: thin; scrollbar-color: #9a9994 var(--canvas); }
+
+/* Refined page scrollbar */
+html::-webkit-scrollbar { width: 10px; }
+html::-webkit-scrollbar-track { background: var(--canvas); }
+html::-webkit-scrollbar-thumb {
+  background: #9a9994;
+  border: 3px solid var(--canvas);
+  border-radius: 999px;
+}
+html::-webkit-scrollbar-thumb:hover { background: #6f6e69; }
 body {
   margin: 0;
   overflow-x: hidden;
