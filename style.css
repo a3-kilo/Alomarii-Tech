@@ -295,6 +295,8 @@ button { color: inherit; }
 .founder-profile { display: grid; grid-template-columns: minmax(280px,.72fr) minmax(0,1.28fr); gap: clamp(32px,5vw,72px); align-items: center; padding: clamp(24px,4vw,48px); border-radius: 28px; background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow-sm); }
 .team-photo { overflow: hidden; border-radius: 22px; background: #e9e9e5; }
 .team-photo img { width: 100%; height: 100%; object-fit: cover; }
+/* Keep Omar visible in the team roster, without offering his headshot as the homepage search preview. */
+.team-photo--omar { background: #e9e9e5 url("https://i.ibb.co/XkdXBkk4/Omar-Khalid.png") center / cover no-repeat; }
 .founder-photo { width: 100%; max-width: 420px; aspect-ratio: 4/5; }
 .team-details h3 { margin: 0; font: 560 clamp(30px,3.3vw,46px)/1 var(--font-display); letter-spacing: -.045em; }
 .team-details > p:not(.team-role):not(.team-label) { max-width: 600px; margin: 15px 0 0; color: var(--muted); font-size: 14px; line-height: 1.65; }
